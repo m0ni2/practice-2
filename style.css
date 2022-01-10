@@ -9,12 +9,12 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     text-transform: capitalize;
 }
 
 img {
-    width: 100%;
     max-width: 100%;
 }
 
@@ -125,4 +125,93 @@ td {
 
 .video-container {
     justify-content: center;
+}
+
+.animation-area {
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.cricket,
+.bounce {
+    width: 700px;
+    height: 400px;
+    border: 1px dashed #fff;
+    position: relative;
+}
+
+.cricket h4 {
+    text-align: center;
+}
+
+.bat {
+    position: absolute;
+    left: 100px;
+    top: 10px;
+    transform: rotate(60deg);
+    transform-origin: top right;
+    transition: transform 0.2s ease-in;
+}
+
+.cricket:hover .bat {
+    transform: rotate(-20deg);
+}
+
+.bat img {
+    height: 350px;
+}
+
+.ball {
+    position: absolute;
+    bottom: 90px;
+    left: 230px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-image: linear-gradient(#e34b4b, #696a61);
+    box-shadow: 0 0 10px #e34b4b;
+    transition: transform 0.2s ease-out 0.25s;
+}
+
+.cricket:hover .ball {
+    transform: translate(400px, -30px);
+}
+
+@keyframes bounceingBall {
+    0% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        top: calc(100% - 30px);
+        left: 25%;
+    }
+
+    50% {
+        top: 0;
+        left: 50%;
+    }
+
+    75% {
+        top: calc(100% - 30px);
+        left: 75%
+    }
+
+    100% {
+        top: 0;
+        left: calc(100% - 30px);
+    }
+}
+
+.ball-2 {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-image: linear-gradient(#e34b4b, #696a61);
+    box-shadow: 0 0 10px #e34b4b;
+    animation: bounceingBall 2s linear 0.1s infinite alternate;
+    animation-play-state: running;
 }
