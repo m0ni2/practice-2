@@ -127,6 +127,18 @@ td {
     justify-content: center;
 }
 
+.font-awesome-area {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.fab {
+
+    color: #fff;
+    font-size: 20px;
+}
+
 .animation-area {
     flex-direction: column;
     /* justify-content: center; */
